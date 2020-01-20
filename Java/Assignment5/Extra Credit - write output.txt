@@ -1,0 +1,51 @@
+class A {
+	List<Object> list = new LinkedList<>();
+	public boolean addAll(Collection<Object> c) {
+		Iterator<Object> it = c.iterator();
+		while(it.hasNext())
+			this.add(it.next());
+		return true;
+	}
+	public boolean add(Object e) {
+		list.add(e);
+		return true;
+	}
+
+	private int i = 0;
+	public int getI(){
+		return i;
+	}
+}
+
+class B extends A {
+	private int addCount = 0;
+	public int getAddCount() {
+		return addCount;
+	}
+
+	@Override
+	public boolean addAll(Collection<Object> c) {
+		addCount += c.size();
+		return super.addAll(c);
+	}
+	
+	@Override
+	public boolean add(Object e) {
+		addCount++;
+		return super.add(e);
+	}
+    
+	public int i = 3;
+}
+
+public class Test {
+	public static void main(String[] args) {
+		B b = new B();
+		List<Object> list = Arrays.asList(1,2,3);
+		b.addAll(list);
+		System.out.println(b.getAddCount()+b.getI());
+	}
+} 
+
+The execution starts from the main method where the child class object is created. It calls the child class B’s addAll() method. Inside Class B’s addAll method, it will count the size of the list and stores 3 in addCount.Then it calls super.addAll(c) which again goes to Class A’s addAll() method, which in turn calls the add() method in Parent class A and then calls add() in child class B where it adds the no of elements in the list and will return 6 after all the 3 elements in the list are over . So if we call b.getAddCount() it returns 6 and b.getI() returns 0 since the value of i=0. So this line:System.out.println(b.getAddCount()+b.getI()); will return 6 0 if we add space in between like System.out.println(b.getAddCount() +”” +b.getI());
+else it will return only 6.

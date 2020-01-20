@@ -1,0 +1,133 @@
+Car Rental
+
+Class: User
+ 
+	Data: userName
+                  userAddress
+                  userContactNumber
+                  userEmail 
+                  userAge
+                  userCreditCardInfo
+                  userDrivingLicense
+                  userInsuranceDetails
+                  userBookingId
+                  pickUpLocation
+                  dropOffLocation
+                  pickUpTime
+                  dropOffTime
+                  pickUpDate
+                  dropOffDate
+                  preferredVehicle
+                  userBudget
+ 
+ 
+ 
+	Behavior: searchRental(pickUpLocation, dropOffLocation, pickUpTime, dropOffTime,pickUpDate,dropOffDate) 
+                         modifyRental(pickUpLocation, dropOffLocation, pickUpTime, dropOffTime,preferredVehicle) {
+                                 //modify rental search to make any changes
+                                    }
+                         requestExtraEquipments(){
+                              //if user needs extra equipments like carSeat,navigationSystem, satelliteRadio or tablet
+                                    }
+                          reviewRental(){
+                                //to review before the booking
+                                    }
+                          sortSearch(sortByPrice,sortByCarType) 
+                                                                                     
+                           viewRentalPolicy()
+	                   bookRental()                             
+                           
+                           cancelRental()
+	-----------------------------------------------------------------------
+	Class: CreditCardInfo
+ 
+	Data  : creditCardName
+                    creditCardNumber,
+                    creditCardType
+                    creditCardExpiry
+ 
+	Behavior:  iscreditCardExpired() {
+	                                Date currentDate = new Date();
+	                                if(currentDate.compareTo(creditCardexpiry) == 1)
+	                                              return true;
+	                                return false;
+	                               }
+	
+ 
+	---------------------------------------------------------------------
+ 
+      Class:ExtraEquipments
+ 
+      Data:  carSeat
+                 navigationSystem
+                 satelliteRadio
+                 tablet
+ 
+  ———————————————————————————————————————
+	Class: RentalOwner
+ 
+	Data: rentalOwnerName
+                  rentalOwnerAddress
+                  rentalOwnerConatctInfo
+                  rentalOwnerId
+                  listOfVehicles
+	————————————————————————
+ 
+	Class: Rental
+ 
+	Data: rentalName,
+                  rentalAddress
+                  rentalContactInfo
+                  rentalEmail  
+                  rentalId                             
+                  rentalReviews
+                  rentalRating
+                  pricePerDay
+                  carType
+                  noOfCars
+                  availableLocations
+                  rentalDeals
+                  reward points
+                  extraEquipments    //car seat,satellite radio,tablet,navigation system
+                  rentalPolicy           //fuel_policy,age restriction,extra hour charge,smoking policy
+                  roadsideAssistance
+                  rentalInsurance
+                  workingHours
+                  
+        
+                  
+          Behavior: checkAvailability(pickUpLocation, dropOffLocation, pickUpTime, dropOffTime,noOfCars) {
+	                                            // check availability of number of cars on that specific day
+	                      }
+                           Double calculatePrice(noOfDays,pricePerDay){
+                                      double total_price;
+                                      total_price= noOfDays* pricePerDay;
+                                      return total_price
+ 
+ 
+ 
+	----------------------------------------------------------------
+	Class: RentalService
+ 
+ 
+searchRental(pickUpLocation, dropOffLocation, pickUpTime, dropOffTime,pickUpDate,dropOffDate) {
+	                             //based on user input parameters return list of available  cars and location
+	               }
+ 
+modifyRental(pickUpLocation, dropOffLocation, pickUpTime, dropOffTime,preferredVehicle) {
+                                 //modify rental search to make any changes
+                       }
+ requestExtraEquipments(){
+                              //if user needs extra equipments like carSeat,navigationSystem, satelliteRadio or tablet
+                                 return equipments
+                      }
+reviewRental(){
+                                //to review before the booking
+                       }
+bookRental(carType,noOfDays,Price,rentalId){
+                              //Based on car type and no of days calculate total price and generate rentalId
+	              }
+	
+cancelRental(rentalId){
+                             // cancel rental fetching rentalId
+	    	        }

@@ -1,0 +1,55 @@
+final
+
+final is a keyword in Java which can be used in variable,methods and classes.If we use final keyword in a class name ,it means that that class can not be extended by another class.If a class is made final, then all the methods in that class are default final but variable are not If we use final keyword in a method, it means that we cannot override that method.If we use final keyword in front of a variable it means that that variable cannot be changed once its reference has been assigned.For example,
+
+1. using final in case of a variable
+void method1()
+{
+int a = 20;
+a = 21;
+final int b = 30;
+b = 35  //we will get compilation error since b has been already made final
+}
+
+2. using final in case of a method
+@override
+final void method1()          //we will get error here
+{
+int a =20;
+}
+@override
+void method2(){
+int b = 20;
+}
+
+3. using final in case of a class
+final class A{
+public static void main()
+{
+     //
+}
+}
+class B extends class A     // we will get compilation error here since final class A cannot be   extended
+{   
+}  
+
+
+——————————————————————————————————————
+
+finally
+
+finally is a keyword in Java and is executed after a try catch statement.The code written inside finally will get executed even if an exception is thrown or not.For example, in the below code finally statement will get executed even if it throws an exception or not.
+
+ class A { 
+    public static void main(String[] args) 
+    { 
+      
+        try { 
+            System.out.println(“enter try block"); 
+             }  catch (ArithmeticException e) { 
+                     System.out.println(“Enter catch block"); 
+             }  finally{ 
+                     System.out.println("Enter finally”); 
+             } 
+     } 
+} 

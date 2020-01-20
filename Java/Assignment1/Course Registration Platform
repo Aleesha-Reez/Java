@@ -1,0 +1,126 @@
+Course registration platform
+
+Student can 
+login
+search course using course number
+register course
+add courses
+drop courses
+———————————————————————————
+Class Student:
+Data: studentUserName, studentPassword, courseNumber,studentDegree
+Behavior:
+                   Login( )
+                  {
+                         courseRegistration.studentLogin( StudentUserName,studentPassword)
+                         //login using username and password
+                   }
+                  searchCourse(int courseNumber)
+                   {
+                           courseRegistration.searchCourse(int courseNumber)
+                    }
+                  addCourse(courseNumber)
+                   {
+                        add course using course number
+                         courseRegistration.addCourse(courseNumber)
+                   }
+                         
+                dropCourse(courseNumber)
+                {
+                      courseRegistration.dropCourse(courseNumber)
+                }
+                contactHelpDesk()
+                {
+                       helps to email or call help desk 
+                 }
+
+Class : Course
+Data: courseTitle
+          CourseNumber
+          Professor
+          TA
+          courseCredit
+
+Class courseRegistration:
+
+Data: int maxCredit =9
+          int minCredit =4
+          int numOfStudentsEnrolled
+          totalSeats=60
+          Course course[ ] = new course();
+Behavior:
+                 studentLogin(StudentUserName,studentPassword)
+                 {
+                       if (StudentUserName.equals(Username) &amp;&amp; studentPassword.equals(Password)) {
+                                      System.out.println(“Login Successfully”);
+                                     }
+                       else
+                                       System.out.println(“Invalid login”);
+                    }
+                   checkStudentDetails( courseNumber,batch,branch){
+                        Fetch student details using student’s branch,batch and courseNumber to see if the student is eligible
+to take that course
+                               }
+                 
+                                                          
+               searchCourse(int courseNumber)
+                      {
+                        check StudentDetails to ensure student is eligible to take that course
+                        check if the course is existing using course number given
+                    
+                      }
+             courseRegister()
+                           {
+                                  checkStudentDetails()
+                                  creditCheck()
+                                  checkCourseAvailabilty()
+                            }
+
+                 checkCourseAvailabilty
+                           {
+                                
+                                  if(noOfStudEnrolled &lt; = totalSeats)
+                                    {
+                    
+                                        System.out.println(“Course available :registered”);
+                                        noOfStudEnrolled++ ;
+                                        currentCredit++;
+                                    }
+                                   else
+                                         System.out.println(“Course not available : Waitlisted”);
+                             }
+                 creditCheck()
+                        {
+                                  if( currentCredit &gt; maxCredit)
+
+                                             {
+                                                 System.out.println(“System Error: Student should not exceed maximum of 9 credits”);
+                                              }
+                                  if( currentCredit &lt; minCredit)
+                                             {
+                                                  System.out.println(“System Error: Student should maintain a minimum of 4 credits”);
+                                              }
+                         }
+                  
+                  addCourse(courseNumber)
+                   {
+                              check student details
+                              credit check()
+                               if course.inputCourseNumber is available
+                                    add inputCourseNumber to the list
+                    }
+                   dropCourse(courseNumber)
+                  {
+                        if(course.inputCourseNumber==courseNumber)
+                                 remove inputCourseNumber from the list
+                   }
+                  displayCourseDetails()
+                                             {
+                                                course.display(courses);
+                                              }
+
+Class: ITHelpDesk
+Data:
+Behaviour:  contactHelpDesk{
+                               //Call help desk number
+                   }

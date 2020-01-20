@@ -1,0 +1,52 @@
+Vending machine 
+
+Provides soda(5), snacks(5) and candy(5) 
+Price per item is 1.5 dollars
+Accept bills of 10cents, 20cents and 50cents
+Returns balance if any
+Cancel input 
+ 
+ 
+CheckUserInput(inputNo)
+ Case1: if  inputNo== 1
+                     If soda available
+                        SodaCount- -
+                     else 
+                        Print Soda not available-choose another item
+ 
+ 
+Case2: if  inputNo== 2
+                     If snack available 
+                          Snackcount- -
+                     else 
+                        Print Snack not available-choose another item
+ 
+Case3: if  inputNo== 3
+                 If candy available 
+                        Candycount- -
+                 else 
+                        Print Candy not available-choose another item
+Default : invalid option: choose 1,2 or 3
+ 
+ 
+Makepayment()
+ 
+totalSum=0 
+Ask to insert coin
+Check if coin is 10or 20 or 50 cents
+         totalSum = current coin value
+         if totalSum < 1.5
+                   Ask to insert coin
+                    totalSum  = totalSum + currentValue
+                    Return item
+         If totalSum=1.5
+                     Return item
+          If totalSum > 1.5
+                     Return balance, item
+Else
+      Print - not a valid coin: choose 10cents or 20 cents or 50 cents                 
+      
+ 
+ 
+ CancelItem
+         Remove inputNo 

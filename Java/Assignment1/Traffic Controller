@@ -1,0 +1,84 @@
+Traffic Controller for a junction
+
+Junction has
+ 
+4 roads where road1 and road 2 are opposite to each other and road3 and road 4 are opposite
+Each road has traffic controllers and each traffic controller has signals for left turn and straight go which works upon timers set
+4 roads has 4 pedestrian signals
+
+Class:Roads
+Data:road1
+        road2
+        road3
+        road4
+
+
+Class:trafficController
+Data:   trafficCn1          //traffic controller across road1
+            trafficCn2      
+            trafficCn3       
+            trafficCn4      
+            trafficCnT1S1   // traffic controller 1’s straight
+            trafficCnT1L1   //trafic controller 1’s Left
+            trafficCnT2S2
+            trafficCnT2L2
+            trafficCnT3S3
+            trafficCnT3L3
+            trafficCnT4S4
+            trafficCnT4L4
+
+Behavior: controlTraffic(){
+                     Case1: Activating  traffic controller 1 and 2 ,keeping traffic controller 3 and 4 Red
+                                 Turn  trafficCnT1L1 and trafficCnT2L2  Green for 15 sec,rest all lights Red and all Pedestrian signals Red
+                                  After 15sec,turn on Yellow for trafficCnT1L1 and trafficCnT2L2 for 3 sec
+                                  Turn Red  for  trafficCnT1L1 and trafficCnT2L2
+                                  Turn  trafficCnT1S1 and trafficCnT2S2  Green for 45 sec,rest all lights Red and allow walk signal for pedestrianSg3 and pedestrianSg4 for 45 sec
+                                  Turn trafficCnT1S1 and trafficCnT2S2  Yellow for 5 sec
+                                  Turn trafficCnT1S1 and trafficCnT2S2  Red
+
+
+                                   
+                      Case2 : Activating  traffic controller 3 and 4 ,keeping traffic controller 1 and 2 Red
+                                 Turn  trafficCnT3L3 and trafficCnT4L4  Green for 15 sec,rest all lights Red and all Pedestrian signals Red
+                                  After 15sec,turn on Yellow for trafficCnT3L3 and trafficCnT4L4 for 3 sec
+                                  Turn Red  for  trafficCnT3L3 and trafficCnT4L4
+                                  Turn  trafficCnT3S3 and trafficCnT4S4  Green for 45 sec,rest all lights Red and allow walk signal for pedestrianSg1 and pedestrianSg2 for 45 sec
+                                  Turn trafficCnT3S3 and trafficCnT4S4  Yellow for 5 sec
+                                  Turn trafficCnT3S3 and trafficCnT4S4  Red
+
+                                 Repeat the cases
+
+                                   
+                                  
+                  
+                 
+
+ Class:pedestrianSignal
+ Data: pedestrianSg1         //Pedestriancross signal across road1
+          pedestrianSg2        //Pedestriancross signal across road2
+          pedestrianSg3        //Pedestriancross signal across road3
+          pedestrianSg4        //Pedestriancross signal across road4
+          walkSignal
+Behavior:activatePedestrianSignal(){
+                   if  trafficCnT3S3 and trafficCnT4S4  Green 
+                             Activate walk signal for pedestrianSg1 and pedestrianSg2 for 45 sec
+                              pedestrianSg3 and pedestrianSg4 Red
+
+                   if  trafficCnT1S1and trafficCnT2S2  Green 
+                             Activate walk signal for pedestrianSg3 and pedestrianSg4 for 45 sec
+                              pedestrianSg1 and pedestrianSg2 Red
+
+                    }
+              
+
+
+           
+Class:trafficLight
+
+Data: Red                //to stop
+          Green            //to Go
+          Yellow           //prepare to stop 
+          walk signal   //for pedestrian walk
+
+
+

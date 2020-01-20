@@ -1,0 +1,108 @@
+Parking lot
+
+
+Class: Driver
+
+Data: ticketNo,timeIn ,timeOut,vehicleType
+
+Behavior:
+
+getTicket()
+searchAvailableSpots()
+makePayment()
+
+
+           
+Class: Ticketsystem
+
+Data: 
+          totalLevels
+          costPerHour
+          slotCount=0
+
+Behavior: printTicket()
+                   {     
+                          push button
+                       // generate a ticket number 
+                           slotCount+ +
+                    }
+
+
+                allotFreeSpots()
+                          checkLevelAvailability()
+                         
+
+                exit()
+                      
+                      calculatePay()
+                      slotCount- -
+                      checkLevelAvailability()
+
+
+
+Class: parkingSlots
+
+Data: handiCapped
+          compactVehicles
+          largeVehicles
+          motorcycleSlot
+
+
+
+
+Class :vehicleType
+
+Data: car
+          motorcycle
+          truck
+
+
+
+
+Class: Level
+
+Data: level1countMax=30
+          level2countMax
+          level3countMax
+
+
+Behavior: checkLevelAvailability()
+                        if slotCount <=totalCapacity
+                           
+                            if slotCount <= level1countMax
+                                         display level1 is available 
+                                         level1Count+ +
+                            if  level1Count > level1countMax
+                                                  display level 1 is full
+                                                  level2count++
+                                                  display level2 is available 
+                                         
+                            if  level2Count > level2countMax
+                                                  display level 2 is full           
+
+                     else
+                            No available slots
+
+
+
+
+Class:Payment
+
+Data: costPerHour=3$
+          totalCost
+
+Behavior: calculatePay()
+                    totalCost = (currentTime- timeIn)*3 
+                     
+
+
+
+          
+
+
+
+          
+
+
+
+

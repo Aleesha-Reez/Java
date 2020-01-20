@@ -1,0 +1,18 @@
+
+What is the difference between Encapsulation and Abstraction
+
+
+1. Abstraction hides the irrelevant data and shows only the relevant data reducing the complexities.
+Encapsulation hides the data from outside world and reduces the complexities making it easy to handle for the end user.
+
+
+
+2. Abstraction is not concerned about the implementation level,it only involves at the high level or at the design level whereas Encapsulation is involved at the implementation level
+
+3. Abstraction example : In the case of a phone, here we are concerned only about the phone feature like it has a camera, we can call and text.Not concerned about its implementation.
+Encapsulation example: Here, we are concerned only about taking picture,but not how camera works inside to capture pictures or how call is getting connected internally etc.
+
+
+4. Abstraction uses abstract classes and interfaces where Encapsulation uses getter and setters and modifiers 
+
+5. Abstraction focuses on what should be done  whereas encapsulation focus on how it should be done.

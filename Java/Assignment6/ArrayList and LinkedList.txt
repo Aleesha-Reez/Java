@@ -1,0 +1,19 @@
+ArrayList and LinkedList
+
+ArrayList and LinkedList are List interface implementations but have few differences.
+
+
+1. Search: In case of search operations, it is better to use ArrayList since it is pretty fast compared to LinkedList.It gives the performance of O(1) while LinkedList performance is O(n);
+
+2. Deletion : While deleting an element from the list, LinkedList performance is O(1) while it varies on ArrayList.For ArrayList the worse case is O(n) while removing the first element and O(1) in best case while removing last element.
+Linked List deletion is faster compared to ArrayList 
+
+3. Insertion : In case of LinkedList , insert method gives O(1) performance while ArrayList gives O(n) in worst case.Linked List insertion is faster compared to ArrayList 
+
+4. Memory Overhead: LinkedList maintains the data and pointers to neighbouring nodes hence memory consumption is higher in LinkedList than ArrayList since ArrayList maintains only the index and the data.
+
+5. ArrayList is implemented with the concept of dynamic array 
+   ArrayList<Type> list = new ArrayList<Type>;
+
+   LinkedList is implemented with the concept of doubly linked list.
+   LinkedList<Type> list = new LinkedList<Type>;

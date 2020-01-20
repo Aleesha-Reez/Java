@@ -1,0 +1,7 @@
+
+Explain Encapsulation with an example. (Write at least 30-40 words).
+
+
+Encapsulation is one of the Object Oriented Programming concepts in which the data is hidden from the outside world. It wraps the data and the code into a single unit. We use different modifiers for the visibility of classes, methods or any variables and use getters and setters method to make any modifications in the future without disturbing the internal code. Here we can make any attributes or methods hidden from the external access by using private modifierS and by using the public getters for reading, and setters method for making any future changes.
+
+In practical life, consider the case of a phone call. We are never bothered of how we are able to make the call through a wireless connection, or which all frequencies or bands that are using, but we are only concerned with the call that we make.
